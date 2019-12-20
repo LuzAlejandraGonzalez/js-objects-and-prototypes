@@ -5,7 +5,12 @@ var cat = {
     color: 'White'
 }
 
-Object.defineProperty(cat, 'name', {writable: false});
-cat.name.first = 'Scratchy';
-display(cat.name);
-//display(Object.getOwnPropertyDescriptor(cat,'name'));
+Object.defineProperty(cat, 'name', {enumerable:true});
+
+//for in
+for(var propertyName in cat){
+    display(propertyName + ': ' + cat[propertyName])
+}
+
+display(JSON.stringify(cat));
+//display(Object.keys(cat));
