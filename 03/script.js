@@ -34,11 +34,19 @@ function Cat(name, color){
 }
 var fluffy = new Cat('Fluffy','White');
 
-Cat.prototype.age = 3;
+Cat.prototype.age = 4;
 
-display(Cat.prototype);
-display(fluffy.__proto__);
 
+var fluffy = new Cat ('Fluffy','White');
 var muffin = new Cat ('Muffin','Brown');
 
-display(muffin.__proto__);
+fluffy.age = 5;
+
+display(fluffy.age);
+display(fluffy.__proto__.age);
+
+//display(Object.keys(fluffy));
+
+display(fluffy.hasOwnProperty('age'));
+
+
