@@ -7,7 +7,7 @@
 
 var cat = new Cat('Fluffy', 'White'); */
 
-var cat = Object.create(Object.prototype,
+/* var cat = Object.create(Object.prototype,
     {
         name:{
             value: 'Fluffy',
@@ -26,5 +26,20 @@ var cat = Object.create(Object.prototype,
 
 
 display(cat);
+ */
 
+ class Cat {
+     constructor(name, color){
+         this.name = name;
+         this.color = color;
+     }
 
+     speak(){
+         display('Meooow')
+     }
+ }
+
+ var cat = new Cat ('Fluffy','White');
+
+ display(cat);
+ cat.speak();
