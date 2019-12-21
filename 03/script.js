@@ -22,23 +22,32 @@ the object is inherited.
 */
 
 
-var myFunc = function(){}
+/* var myFunc = function(){}
 display(myFunc.prototype);
 
 var cat = {name: 'Fluffy'}
-display(cat.__proto__);
+display(cat.__proto__); */
+//---------------------------------------------------------
+function Animal(voice){
+    this.voice = voice || "grunt";
+}
+
+Animal.prototype.speak = function(){
+    display(this.voice);
+}
 
 function Cat(name, color){
+    Animal.call(this, 'Meoow');
     this.name = name;
     this.color = color;
 }
+Cat.prototype = Object.create(Animal.prototype);
+
 var fluffy = new Cat('Fluffy','White');
-
-Cat.prototype.age = 4;
-
-var fluffy = new Cat ('Fluffy','White');
+display(fluffy);
+display(fluffy instanceof Cat);
+display(fluffy instanceof Cat);
 display(fluffy.__proto__);
-display(fluffy.__proto__.__proto__);
-display(fluffy.__proto__.__proto__.__proto__);
+
 
 
