@@ -36,17 +36,9 @@ var fluffy = new Cat('Fluffy','White');
 
 Cat.prototype.age = 4;
 
-
 var fluffy = new Cat ('Fluffy','White');
-var muffin = new Cat ('Muffin','Brown');
-
-fluffy.age = 5;
-
-display(fluffy.age);
-display(fluffy.__proto__.age);
-
-//display(Object.keys(fluffy));
-
-display(fluffy.hasOwnProperty('age'));
+display(fluffy.__proto__);
+display(fluffy.__proto__.__proto__);
+display(fluffy.__proto__.__proto__.__proto__);
 
 
