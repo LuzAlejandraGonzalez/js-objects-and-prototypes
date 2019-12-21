@@ -28,26 +28,26 @@ display(myFunc.prototype);
 var cat = {name: 'Fluffy'}
 display(cat.__proto__); */
 //---------------------------------------------------------
-function Animal(voice){
-    this.voice = voice || "grunt";
+class Animal{
+    constructor(voice){
+        this.voice = voice || 'grunt';
+    }
+    speak(){
+        display(this.voice);
+    }
+}
+class Cat extends Animal{
+    constructor(name,color){
+        super('Meow');
+        this.name = name;
+        this.color = color;
+    }
 }
 
-Animal.prototype.speak = function(){
-    display(this.voice);
-}
-
-function Cat(name, color){
-    Animal.call(this, 'Meoow');
-    this.name = name;
-    this.color = color;
-}
-Cat.prototype = Object.create(Animal.prototype);
-
-var fluffy = new Cat('Fluffy','White');
-display(fluffy);
-display(fluffy instanceof Cat);
-display(fluffy instanceof Cat);
-display(fluffy.__proto__);
-
+var fluffy = new Cat ('Fluffy','White');
+//fluffy.speak();
+//display(fluffy.constructor);
+display(Object.keys(fluffy.__proto__.__proto__));
+display(fluffy.__proto__.__proto__.hasOwnProperty('speak'));
 
 
